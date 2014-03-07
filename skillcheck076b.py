@@ -11,9 +11,6 @@ import sys
 import os
 import numpy as np
 from matplotlib import font_manager
-from matplotlib.figure import Figure
-from matplotlib.backends.backend_qt4agg import FigureCanvasQTAgg as FigureCanvas
-import skillcheck_rc
 
 #form_class = uic.loadUiType("skillcheck.ui")[0]
 

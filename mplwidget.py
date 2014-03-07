@@ -25,6 +25,7 @@ class MplWidget(QWidget):
         self.vbl.addWidget(self.canvas)
         self.setLayout(self.vbl)
         
+#===============================================================================
 # class MplWidget(QWidget):
 #     def __init__(self, parent = None):
 #         QWidget.__init__(self, parent)
@@ -34,4 +35,5 @@ class MplWidget(QWidget):
 #         self.vbl.addWidget(self.canvas)
 #         self.vbl.addWidget(self.mpl_toolbar)
 #         self.setLayout(self.vbl)
+#===============================================================================
         
