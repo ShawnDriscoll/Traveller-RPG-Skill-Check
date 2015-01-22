@@ -1,13 +1,12 @@
 
 This program has been tested on both Windows XP and Windows 7.
 
+It was written using Eclipse PyDev and Qt Designer for Python 2.5.4 and PyQt4.
 
-First, install the included ERASDEMI.TTF font.
 
-To use this program, run the skillcheck076b.exe file.
+You'll need to install the included ERASDEMI.TTF font.
 
-If a file is reported missing, such as MSVCP71.dll, copy the file to your C:\Windows\System32 folder.  Then run again.
-
+To use this program, run the skillcheck076b.py file.
 
 
 WARNING: I'm not responsible for any harm caused by using this software for any version of Traveller other than Mongoose Traveller.
