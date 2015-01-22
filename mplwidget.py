@@ -4,9 +4,9 @@ from matplotlib.backends.backend_qt4agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 
 class MplCanvas(FigureCanvas):
-    """
+    '''
     Class to represent the FigureCanvas widget
-    """
+    '''
     def __init__(self):
         self.fig = Figure()
         self.ax = self.fig.add_subplot(111)

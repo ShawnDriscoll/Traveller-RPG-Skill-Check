@@ -30,22 +30,22 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         QMainWindow.__init__(self, parent)
         self.setupUi(self)
-        self.rollButton.clicked.connect(self.on_roll2d6_buttonClicked)
-        self.rollButton.clicked.connect(self.update_graph)
-        self.actionRoll.triggered.connect(self.on_roll2d6_buttonClicked)
-        self.actionRoll.triggered.connect(self.update_graph)
-        self.clearButton.clicked.connect(self.on_clearall_buttonClicked)
-        self.clearButton.clicked.connect(self.update_graph)
-        self.actionClear.triggered.connect(self.on_clearall_buttonClicked)
-        self.actionClear.triggered.connect(self.update_graph)
-        self.actionPlaySample.triggered.connect(self.on_PlaySample_menu)
-        self.actionUnMute.triggered.connect(self.on_unMute_menu)
-        self.actionMute.triggered.connect(self.on_Mute_menu)
-        self.actionVisit_Shonner.triggered.connect(self.on_Visit_Shonner)
-        self.actionTech_Support.triggered.connect(self.on_Tech_Support)
-        self.actionOverview.triggered.connect(self.on_Overview_menu)
-        self.actionAbout_Skill_Check.triggered.connect(self.on_actionAbout_triggered)
-        self.actionQuit.triggered.connect(self.quitApp)
+        self.rollButton.clicked.connect(self.roll2d6_buttonClicked)
+        self.actionRoll.triggered.connect(self.roll2d6_buttonClicked)
+        self.clearButton.clicked.connect(self.clearall_buttonClicked)
+        self.actionClear.triggered.connect(self.clearall_buttonClicked)
+        self.actionPlaySample.triggered.connect(self.PlaySample_menu)
+        self.actionUnMute.triggered.connect(self.unMute_menu)
+        self.actionMute.triggered.connect(self.Mute_menu)
+        self.actionVisit_Shonner.triggered.connect(self.Visit_Shonner)
+        self.actionTech_Support.triggered.connect(self.Tech_Support)
+        self.actionOverview.triggered.connect(self.Overview_menu)
+        self.actionAbout_Skill_Check.triggered.connect(self.actionAbout_triggered)
+        self.actionQuit.triggered.connect(self.quitButton_clicked)
+        self.inputskilllevel.valueChanged.connect(self.inputskilllevel_valueChanged)
+        self.inputcharmod.valueChanged.connect(self.inputcharmod_valueChanged)
+        self.inputDM.valueChanged.connect(self.inputDM_valueChanged)
+        self.diffdial.valueChanged.connect(self.diffdial_valueChanged)
         self.muted = True
         self.natural_roll = 0
         self.total_rolled = 0
@@ -57,41 +57,36 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionUnMute.setDisabled(not self.muted)
         self.popAboutDialog=aboutDialog()
 
-    @pyqtSlot(int)
-    def on_inputskilllevel_valueChanged(self, value):
-        self.totalDM.setText(str(value + self.inputcharmod.value() + self.inputDM.value() + self.diffdial.value()))
+    def inputskilllevel_valueChanged(self):
+        self.totalDM.setText(str(self.inputskilllevel.value() + self.inputcharmod.value() + self.inputDM.value() + self.diffdial.value()))
         self.die_result.setText('')
         self.die1Label.setPixmap(QPixmap(':/images/die1_0.png'))
         self.die2Label.setPixmap(QPixmap(':/images/die2_0.png'))
         self.effect_result.setText('')
 
-    @pyqtSlot(int)
-    def on_inputcharmod_valueChanged(self, value):
-        self.totalDM.setText(str(value + self.inputskilllevel.value() + self.inputDM.value() + self.diffdial.value()))
+    def inputcharmod_valueChanged(self):
+        self.totalDM.setText(str(self.inputskilllevel.value() + self.inputcharmod.value() + self.inputDM.value() + self.diffdial.value()))
         self.die_result.setText('')
         self.die1Label.setPixmap(QPixmap(':/images/die1_0.png'))
         self.die2Label.setPixmap(QPixmap(':/images/die2_0.png'))
         self.effect_result.setText('')
 
-    @pyqtSlot(int)
-    def on_inputDM_valueChanged(self, value):
-        self.totalDM.setText(str(value + self.inputskilllevel.value() + self.inputcharmod.value() + self.diffdial.value()))
+    def inputDM_valueChanged(self):
+        self.totalDM.setText(str(self.inputskilllevel.value() + self.inputcharmod.value() + self.inputDM.value() + self.diffdial.value()))
         self.die_result.setText('')
         self.die1Label.setPixmap(QPixmap(':/images/die1_0.png'))
         self.die2Label.setPixmap(QPixmap(':/images/die2_0.png'))
         self.effect_result.setText('')
 
-    @pyqtSlot(int)
-    def on_diffdial_valueChanged(self, value):
-        self.totalDM.setText(str(value + self.inputskilllevel.value() + self.inputcharmod.value() + self.inputDM.value()))
-        self.totalDiff.setText(str(value))
+    def diffdial_valueChanged(self):
+        self.totalDM.setText(str(self.inputskilllevel.value() + self.inputcharmod.value() + self.inputDM.value() + self.diffdial.value()))
+        self.totalDiff.setText(str(self.diffdial.value()))
         self.die_result.setText('')
         self.die1Label.setPixmap(QPixmap(':/images/die1_0.png'))
         self.die2Label.setPixmap(QPixmap(':/images/die2_0.png'))
         self.effect_result.setText('')
 
-    @pyqtSlot(int)
-    def on_roll2d6_buttonClicked(self):
+    def roll2d6_buttonClicked(self):
         self.natural_roll_1 = roll('1D6')
         self.natural_roll_2 = roll('1D6')
         self.natural_roll = self.natural_roll_1 + self.natural_roll_2
@@ -103,36 +98,36 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if self.roll_effect <= -6:
             self.effect_result.setText('%d: Exceptional Failure' % self.roll_effect)
             if not self.muted:
-                m_media.setCurrentSource(Phonon.MediaSource(":/sounds/exceptional_failure.wav"))
+                m_media.setCurrentSource(Phonon.MediaSource(":/sounds/exceptional_failure.mp3"))
                 m_media.play()
         if self.roll_effect >= -5 and self.roll_effect <= -2:
             self.effect_result.setText('%d: Average Failure' % self.roll_effect)
             if not self.muted:
-                m_media.setCurrentSource(Phonon.MediaSource(":/sounds/average_failure.wav"))
+                m_media.setCurrentSource(Phonon.MediaSource(":/sounds/average_failure.mp3"))
                 m_media.play()
         if self.roll_effect == -1:
             self.effect_result.setText('%d: Marginal Failure' % self.roll_effect)
             if not self.muted:
-                m_media.setCurrentSource(Phonon.MediaSource(":/sounds/marginal_failure.wav"))
+                m_media.setCurrentSource(Phonon.MediaSource(":/sounds/marginal_failure.mp3"))
                 m_media.play()
         if self.roll_effect == 0:
             self.effect_result.setText('%d: Marginal Success' % self.roll_effect)
             if not self.muted:
-                m_media.setCurrentSource(Phonon.MediaSource(":/sounds/marginal_success.wav"))
+                m_media.setCurrentSource(Phonon.MediaSource(":/sounds/marginal_success.mp3"))
                 m_media.play()
         if self.roll_effect >= 1 and self.roll_effect <= 5:
             self.effect_result.setText('%d: Average Success' % self.roll_effect)
             if not self.muted:
-                m_media.setCurrentSource(Phonon.MediaSource(":/sounds/average_success.wav"))
+                m_media.setCurrentSource(Phonon.MediaSource(":/sounds/average_success.mp3"))
                 m_media.play()
         if self.roll_effect >= 6:
             self.effect_result.setText('%d: Exceptional Success' % self.roll_effect)
             if not self.muted:
-                m_media.setCurrentSource(Phonon.MediaSource(":/sounds/exceptional_success.wav"))
+                m_media.setCurrentSource(Phonon.MediaSource(":/sounds/exceptional_success.mp3"))
                 m_media.play()
+        self.update_graph()
 
-    @pyqtSlot(int)
-    def on_clearall_buttonClicked(self):
+    def clearall_buttonClicked(self):
         self.inputskilllevel.setValue(0)
         self.inputcharmod.setValue(0)
         self.inputDM.setValue(0)
@@ -142,53 +137,46 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.die2Label.setPixmap(QPixmap(':/images/die2_0.png'))
         self.effect_result.setText('')
         self.natural_roll = 0
+        self.update_graph()
         
-    @pyqtSlot()
-    def on_PlaySample_menu(self):
-        m_media.setCurrentSource(Phonon.MediaSource(":/sounds/skill_check.wav"))
+    def PlaySample_menu(self):
+        m_media.setCurrentSource(Phonon.MediaSource(":/sounds/skill_check.mp3"))
         m_media.play()
     
-    @pyqtSlot()
-    def on_unMute_menu(self):
-        m_media.setCurrentSource(Phonon.MediaSource(":/sounds/activated.wav"))
+    def unMute_menu(self):
+        m_media.setCurrentSource(Phonon.MediaSource(":/sounds/activated.mp3"))
         m_media.play()
         self.muted = False
         self.actionPlaySample.setDisabled(self.muted)
         self.actionMute.setDisabled(self.muted)
         self.actionUnMute.setDisabled(not self.muted)
-        
-    @pyqtSlot()
-    def on_Mute_menu(self):
-        m_media.setCurrentSource(Phonon.MediaSource(":/sounds/running_silent.wav"))
+
+    def Mute_menu(self):
+        m_media.setCurrentSource(Phonon.MediaSource(":/sounds/running_silent.mp3"))
         m_media.play()
         self.muted = True
         self.actionPlaySample.setDisabled(self.muted)
         self.actionMute.setDisabled(self.muted)
         self.actionUnMute.setDisabled(not self.muted)
-        
-    @pyqtSlot()
-    def on_Visit_Shonner(self):
+
+    def Visit_Shonner(self):
         os.startfile('http://www.shonner.com')
-        
-    @pyqtSlot()
-    def on_Tech_Support(self):
+
+    def Tech_Support(self):
         os.startfile('mailto:shawndriscoll@hotmail.com?subject=Tech Support: Skill Check 0.7.6 (Beta) for Mongoose Traveller')
-        
-    @pyqtSlot()
-    def on_Overview_menu(self):
+
+    def Overview_menu(self):
         os.startfile('docs\skill_check_ref.pdf')
-        
-    @pyqtSlot()
-    def on_actionAbout_triggered(self):
+
+    def actionAbout_triggered(self):
         if not self.muted:
-            m_media.setCurrentSource(Phonon.MediaSource(":/sounds/traveller_ownership.wav"))
+            m_media.setCurrentSource(Phonon.MediaSource(":/sounds/traveller_ownership.mp3"))
             m_media.play()
         self.popAboutDialog.show()
 
-    def quitApp(self):
-        sys.exit(0)
-        
-    @pyqtSlot(int)
+    def quitButton_clicked(self):
+        self.close()
+
     def update_graph(self):
         
         percent = [2.778419, 5.5540770000000004, 8.3340270000000007, 11.111444000000001, 13.898837, 16.663181999999999, 13.891541999999999, 11.105839, 8.3293949999999999, 5.5563149999999997, 2.776923]
@@ -279,7 +267,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 if __name__ == '__main__':
     trange = time.localtime()
-    if trange[0] > 2014 or trange[1] > 4:
+    if trange[0] > 2015 or trange[1] > 6:
         print
         print "Skill Check 0.7.6 (Beta) EXPIRED."
         print
