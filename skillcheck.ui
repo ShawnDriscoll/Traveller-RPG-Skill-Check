@@ -830,6 +830,14 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>inputskilllevel</tabstop>
+  <tabstop>inputcharmod</tabstop>
+  <tabstop>inputDM</tabstop>
+  <tabstop>rollButton</tabstop>
+  <tabstop>diffdial</tabstop>
+  <tabstop>clearButton</tabstop>
+ </tabstops>
  <resources>
   <include location="skillcheck.qrc"/>
  </resources>

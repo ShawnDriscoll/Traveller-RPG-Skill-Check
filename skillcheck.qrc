@@ -17,15 +17,15 @@
     <file>images/sc_dialog.png</file>
     <file>images/sc_icon_16x16.png</file>
     <file>images/shonner_brand.png</file>
-    <file>sounds/skill_check.wav</file>
-    <file>sounds/marginal_success.wav</file>
-    <file>sounds/marginal_failure.wav</file>
-    <file>sounds/running_silent.wav</file>
-    <file>sounds/activated.wav</file>
-    <file>sounds/average_success.wav</file>
-    <file>sounds/average_failure.wav</file>
-    <file>sounds/exceptional_success.wav</file>
-    <file>sounds/exceptional_failure.wav</file>
-    <file>sounds/traveller_ownership.wav</file>
+    <file>sounds/skill_check.mp3</file>
+    <file>sounds/marginal_success.mp3</file>
+    <file>sounds/marginal_failure.mp3</file>
+    <file>sounds/running_silent.mp3</file>
+    <file>sounds/activated.mp3</file>
+    <file>sounds/average_success.mp3</file>
+    <file>sounds/average_failure.mp3</file>
+    <file>sounds/exceptional_success.mp3</file>
+    <file>sounds/exceptional_failure.mp3</file>
+    <file>sounds/traveller_ownership.mp3</file>
   </qresource>
 </RCC>
