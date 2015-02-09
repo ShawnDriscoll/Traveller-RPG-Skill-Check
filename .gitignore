@@ -38,8 +38,8 @@ Desktop.ini
 ## Python
 #############
 
-.pyx
-.pyc
+*.pyx
+*.pyc
 
 # Packages
 *.egg
