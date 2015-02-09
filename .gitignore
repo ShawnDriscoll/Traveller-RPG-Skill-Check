@@ -39,6 +39,7 @@ Desktop.ini
 #############
 
 .pyx
+.pyc
 
 # Packages
 *.egg
