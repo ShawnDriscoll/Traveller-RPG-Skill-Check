@@ -267,7 +267,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 if __name__ == '__main__':
     trange = time.localtime()
-    if trange[0] > 2015 or trange[1] > 6:
+    if trange[0] > 2016 or trange[1] > 6:
         print
         print "Skill Check 0.7.6 (Beta) EXPIRED."
         print
