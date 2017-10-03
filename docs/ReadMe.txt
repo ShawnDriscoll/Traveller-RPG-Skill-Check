@@ -19,4 +19,4 @@ shawndriscoll@hotmail.com
 
 
 
-The Traveller game in all forms is owned by Far Future Enterprises. Copyright 1977 - 2014 Far Future Enterprises. Traveller is a registered trademark of Far Future Enterprises.
+The Traveller game in all forms is owned by Far Future Enterprises. Copyright 1977 - 2018 Far Future Enterprises. Traveller is a registered trademark of Far Future Enterprises.
