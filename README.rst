@@ -1,5 +1,5 @@
-**Skill Check 0.7.6 (Beta) for Python 2.5**
-===========================================
+**Skill Check 0.7.6 (Beta) for Classic Python 2.5**
+===================================================
 
 .. figure:: images/screen_shot1.png
 
@@ -10,6 +10,6 @@ It comes with an option to speak the roll results out loud.
 
 The diceroll.pyd module was compiled in C99 using MinGW 4.3.3.
 
-Source is provided for just the Python 2.5.4 portion of the app.
+Source is provided for just the Classic Python 2.5.4 portion of the app.
 
 -Shawn

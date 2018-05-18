@@ -1,7 +1,7 @@
 
 This program has been tested on both Windows XP and Windows 7.
 
-It was written using Eclipse PyDev and Qt Designer for Python 2.5.4 and PyQt4.
+It was written using Eclipse PyDev and Qt Designer for Classic Python 2.5.4 and PyQt4.
 
 
 You'll need to install the included ERASDEMI.TTF font.
