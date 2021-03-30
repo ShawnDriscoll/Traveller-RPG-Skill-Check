@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'about_dialog.ui'
 #
-# Created: Mon Mar 17 08:44:17 2014
+# Created: Tue Mar 30 10:32:47 2021
 #      by: PyQt4 UI code generator 4.9.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -53,16 +53,6 @@ class Ui_aboutDialog(object):
     def retranslateUi(self, aboutDialog):
         aboutDialog.setWindowTitle(QtGui.QApplication.translate("aboutDialog", "About Skill Check", None, QtGui.QApplication.UnicodeUTF8))
         self.aboutOKButton.setText(QtGui.QApplication.translate("aboutDialog", "OK", None, QtGui.QApplication.UnicodeUTF8))
-        self.textLabel.setText(QtGui.QApplication.translate("aboutDialog", "<html><head/><body><p><span style=\" font-weight:600;\">Skill Check for Windows 32-bit</span></p><p>Version: Mongoose Traveller Edition</p><p>Build: 0.7.6 (Beta)</p><p>Produced by Shonner Corp. Copyright (C) 2014. Visit us on the web at <a href=\"http://www.shonner.com\"><span style=\" text-decoration: underline; color:#0000ff;\">www.shonner.com</span></a></p><p>Software design by Shawn Driscoll. Contact him at <a href=\"mailto:shawndriscoll@hotmail.com?subject=Skill Check for Mongoose Traveller\"><span style=\" text-decoration: underline; color:#0000ff;\">shawndriscoll@hotmail.com</span></a></p><p>Qt GUI Toolkit is copyright (C) 2012 Nokia Corporation</p><p><br/></p><p>The Traveller game in all forms is owned by Far Future Enterprises. Copyright 1977 - 2014 Far Future Enterprises. Traveller is a registered trademark of Far Future Enterprises.</p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
+        self.textLabel.setText(QtGui.QApplication.translate("aboutDialog", "<html><head/><body><p><span style=\" font-weight:600;\">Skill Check for Windows 32-bit</span></p><p>Version: Mongoose Traveller Edition</p><p>Build: 0.7.6 (Beta)</p><p>Produced by Shonner Corp. Copyright (C) 2014. Visit us on the web at <a href=\"http://www.shonner.com\"><span style=\" text-decoration: underline; color:#0000ff;\">www.shonner.com</span></a></p><p>Software design by Shawn Driscoll. Contact him at <a href=\"mailto:shawndriscoll@hotmail.com?subject=Skill Check for Mongoose Traveller\"><span style=\" text-decoration: underline; color:#0000ff;\">shawndriscoll@hotmail.com</span></a></p><p>Qt GUI Toolkit is copyright (C) 2012 Nokia Corporation</p><p><br/></p><p>The Traveller game in all forms is owned by Far Future Enterprises. Copyright 1977 - 2021 Far Future Enterprises. Traveller is a registered trademark of Far Future Enterprises.</p></body></html>", None, QtGui.QApplication.UnicodeUTF8))
 
 import skillcheck_rc
-
-if __name__ == "__main__":
-    import sys
-    app = QtGui.QApplication(sys.argv)
-    aboutDialog = QtGui.QDialog()
-    ui = Ui_aboutDialog()
-    ui.setupUi(aboutDialog)
-    aboutDialog.show()
-    sys.exit(app.exec_())
-

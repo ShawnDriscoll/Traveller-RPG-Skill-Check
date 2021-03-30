@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'skillcheck.ui'
 #
-# Created: Mon Mar 17 08:44:16 2014
+# Created: Tue Mar 30 10:32:47 2021
 #      by: PyQt4 UI code generator 4.9.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -377,13 +377,3 @@ class Ui_MainWindow(object):
 
 from mplwidget import MplWidget
 import skillcheck_rc
-
-if __name__ == "__main__":
-    import sys
-    app = QtGui.QApplication(sys.argv)
-    MainWindow = QtGui.QMainWindow()
-    ui = Ui_MainWindow()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
-
