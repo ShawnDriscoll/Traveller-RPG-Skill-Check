@@ -1,3 +1,7 @@
+.. image:: https://img.shields.io/github/stars/ShawnDriscoll/Traveller-RPG-Skill-Check.svg
+	:target: https://github.com/ShawnDriscoll/Traveller-RPG-Skill-Check/stargazers
+
+
 **Skill Check 0.7.6 (Beta) for Classic Python 2.5**
 ===================================================
 
